@@ -68,7 +68,7 @@ define mysql_server::service(
 	service { "mysql_${port}":
         	ensure    => $ensure ,
         	path      => "/etc/init.d/mysql_${port}",
-#        	subscribe => File["mysql_config_${port}"],
+        	subscribe => File["mysql_config_${port}"],
         	provider  => 'redhat' ,
         	require   => [ File["mysql_upstart_${port}"] ,
                                File["mysql_config_${port}"] ],

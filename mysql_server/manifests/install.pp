@@ -1,10 +1,10 @@
 class mysql_server::install{
-        #package {'percona-release':
-        #        name    => 'percona-release',
-        #        ensure  =>'installed',
-        #        provider=>'rpm',
-        #        source  => 'puppet:///modules/files/percona-release-0.0-1.x86_64.rpm',
-        #}
+        package {'percona-release':
+                name    => 'percona-release',
+                ensure  =>'installed',
+                provider=>'rpm',
+                source  => 'puppet:///modules/files/percona-release-0.0-1.x86_64.rpm',
+        }
         package {'Percona-Server-server':
                 name    => 'Percona-Server-server-55.x86_64',
                 ensure  => 'installed',

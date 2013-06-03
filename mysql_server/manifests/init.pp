@@ -13,7 +13,7 @@ define mysql_server::percona(
 	$key_buffer_size='32M',
 	$innodb_flush_log_at_trx_commit=1,
 	$innodb_buffer_pool_instances=2) {
-#	include mysql_server::install
+	include mysql_server::install
 	mysql_server::service{ "service_$port":
 		port	  			=> "$port",
 		ensure	  			=> "$ensure",

@@ -5,7 +5,7 @@ define redis_single::service(
         service { "redis_${port}":
                 ensure          => $ensure ,
                 path            => "/etc/init.d/redis_${port}",
-#                subscribe       => File["redis_config_${port}"],
+                subscribe       => File["redis_config_${port}"],
                 provider        => 'redhat' ,
                 require         => [  File["redis_upstart_${port}"] , File["redis_config_${port}"] ],
                 start           => "/etc/init.d/redis_${port} start",
